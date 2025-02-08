@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🎩</text></svg>">
+    <title>Лоадскрин</title>
+	
+	
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #image-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .visible {
+            opacity: 1;
+        }
+
+        #vignette-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: radial-gradient(circle, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%);
+        }
+
+        #text-container {
+            position: absolute;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        #title {
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        #subtitle {
+            font-size: 1.5em;
+        }
+
+        #snow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="image-container">
+        <img id="image1" src="" alt="Random Image 1" class="visible">
+        <img id="image2" src="" alt="Random Image 2">
+        <div id="vignette-overlay"></div>
+        <div id="text-container">
+            <div id="title">ClassicBox</div>
+            <div id="subtitle">Установи уже хромиум...</div>
+        </div>
+        <div id="snow"></div>
+        <script src="https://classicbox.myarena.site/snowflakes.js"></script>
+    </div>
+    <script>
+        const images = [
+            'image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg', 
+            'image5.jpg', 'image6.jpg', 'image7.jpg', 'image8.jpg', 
+            'image9.jpg', 'image10.jpg', 'image11.jpg', 'image12.jpg', 
+            'image13.jpg', 'image14.jpg', 'image15.jpg', 'image16.jpg', 
+            'image17.jpg', 'image18.jpg', 'image19.jpg', 'image20.jpg', 
+            'image21.jpg', 'image22.jpg', 'image23.jpg', 'image24.jpg', 
+            'image25.jpg', 'image26.jpg', 'image27.jpg', 'image28.jpg', 
+            'image29.jpg', 'image30.jpg', 'image31.jpg', 'image32.jpg',
+            'image33.jpg', 'image34.jpg', 'image35.jpg', 'image36.jpg',
+			'image37.jpg', 'image38.jpg', 'image39.jpg', 'image40.jpg'
+        ];
+
+
+        let isImageLoading = false;
+        let currentImageElement = document.getElementById('image1');
+        let nextImageElement = document.getElementById('image2');
+
+        const subtitles = [
+            "Уже заварили чаек?", "Добро пожаловать!", 
+            "Всегда рады видеть вас снова!", "Понравился сервер? Вступай в наш дискорд!"
+        ];
+
+        function chooseRandomSubtitle() {
+            const randomIndex = Math.floor(Math.random() * subtitles.length);
+            document.getElementById('subtitle').textContent = subtitles[randomIndex];
+        }
+
+        function changeImage() {
+            if (isImageLoading) return;
+
+            isImageLoading = true;
+            const randomIndex = Math.floor(Math.random() * images.length);
+            const randomImage = images[randomIndex];
+            
+            const tempImage = new Image();
+            tempImage.src = randomImage;
+            tempImage.onload = () => {
+                nextImageElement.src = randomImage;
+                nextImageElement.classList.add('visible');
+                currentImageElement.classList.remove('visible');
+                [currentImageElement, nextImageElement] = [nextImageElement, currentImageElement];
+                isImageLoading = false;
+            };
+        }
+
+        window.onload = () => {
+            // Load the first image
+            const initialIndex = Math.floor(Math.random() * images.length);
+            currentImageElement.src = images[initialIndex];
+
+            // Choose a random subtitle and set it
+            chooseRandomSubtitle();
+
+            // When the first image loads, set the subtitle and make it visible
+            currentImageElement.onload = () => {
+                document.getElementById('subtitle').style.opacity = 1;
+            };
+
+            setInterval(changeImage, 6000);
+        };
+    </script>
+</body>
+</html>
