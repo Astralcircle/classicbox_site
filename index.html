@@ -26,6 +26,18 @@
             ::-webkit-scrollbar {
                 width: 0;
             }
+
+            .pagebox {
+                margin: auto;
+                width: 20%;
+            }
+
+            .box {
+                padding: 10px;
+                border: 2px solid #323232;
+                border-radius: 5px;
+                background-color: #191919;
+            }
         
             .biglogo {
                 font-size: 35px;
@@ -80,10 +92,15 @@
     </head>
     
     <body>
-        <p class="biglogo">ClassicBox</p>
-        <p class="logo"><a href="rules.html">Правила</a></p>
-        <p class="logo"><a href="https://discord.gg/HAYqdWFrGE">Дискорд</a></p>
-        <p class="logo"><a href="loadscreen/loadscreen.html">Лоадскрин</a></p>
+        <div class="pagebox">
+            <div class="box">
+                <p class="biglogo">ClassicBox</p>
+                <p class="logo"><a href="rules.html">Правила</a></p>
+                <p class="logo"><a href="https://discord.gg/HAYqdWFrGE">Дискорд</a></p>
+                <p class="logo"><a href="loadscreen/loadscreen.html">Лоадскрин</a></p>
+            </div>
+        </div>
+
         <div id="snow"></div>
         <script src="snowflakes.js"></script>
     </body>
