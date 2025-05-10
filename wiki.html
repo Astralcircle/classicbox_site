@@ -49,13 +49,18 @@
 
         table {
             table-layout: auto;
-            -webkit-text-stroke: 3px black;
             white-space: pre-line;
             paint-order: stroke fill;
             font-size: 15px;
             text-align: left;
             border-collapse: collapse;
             width: 100%;
+        }
+
+        @supports (-webkit-text-stroke: 3px black) {
+            table {
+                -webkit-text-stroke: 3px black;
+            }
         }
 
         table td:nth-child(1),
@@ -158,7 +163,8 @@
                 <tr>
                     <th>e:sendPoints</th>
                     <th>Отправляет игроку указанное количество поинтов
-                        Для возможности отправки их через чипы, вы должны включить это через конвар classicbox_pointsfunctions
+                        Для возможности отправки их через чипы, вы должны включить это через конвар
+                        classicbox_pointsfunctions
                     </th>
                 </tr>
             </table>
@@ -239,7 +245,8 @@
                 <tr>
                     <th>Player:sendPoints</th>
                     <th>Отправляет игроку указанное количество поинтов
-                        Для возможности отправки их через чипы, вы должны включить это через конвар classicbox_pointsfunctions
+                        Для возможности отправки их через чипы, вы должны включить это через конвар
+                        classicbox_pointsfunctions
                     </th>
                 </tr>
             </table>
