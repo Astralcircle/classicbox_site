@@ -60,7 +60,7 @@
 
         table td:nth-child(1),
         table th:nth-child(1) {
-            width: 15%;
+            width: 20%;
         }
 
         th,
@@ -118,6 +118,10 @@
                 <tr>
                     <th>e:getPoints</th>
                     <th>Возвращает количество поинтов игрока</th>
+                </tr>
+                <tr>
+                    <th>e:getTimePlayed</th>
+                    <th>Возвращает наигранное игроком время в секундах</th>
                 </tr>
                 <tr>
                     <th>e:getTotalKills</th>
@@ -195,6 +199,10 @@
                     <th>e:isSafezoneSafe</th>
                     <th>Возвращает true если игрок находится в сейфзоне и уже в безопасности, false если нет</th>
                 </tr>
+                <tr>
+                    <th>Player:getTimePlayed</th>
+                    <th>Возвращает наигранное игроком время в секундах</th>
+                </tr>
             </table>
 
             <p class="semibold-text">Функции (Server):</p>
@@ -205,18 +213,6 @@
                     <th>Описание:</th>
                 </tr>
                 <tr>
-                    <th>Player:getTotalKills</th>
-                    <th>Возвращает общее число убийств игрока из таблицы лидеров</th>
-                </tr>
-                <tr>
-                    <th>Player:isInCombat</th>
-                    <th>Возвращает true если игрок находится в активном ПВП, false если нет</th>
-                </tr>
-                <tr>
-                    <th>Player:hasBadge</th>
-                    <th>Возвращает true если у игрока есть указанное достижение, false если нет</th>
-                </tr>
-                <tr>
                     <th>Player:getBadgeProgress</th>
                     <th>Возвращает прогресс достижения игрока</th>
                 </tr>
@@ -225,8 +221,20 @@
                     <th>Возвращает количество поинтов игрока</th>
                 </tr>
                 <tr>
+                    <th>Player:getTotalKills</th>
+                    <th>Возвращает общее число убийств игрока из таблицы лидеров</th>
+                </tr>
+                <tr>
+                    <th>Player:hasBadge</th>
+                    <th>Возвращает true если у игрока есть указанное достижение, false если нет</th>
+                </tr>
+                <tr>
                     <th>Player:hasShopItem</th>
                     <th>Возвращает true если у игрока есть предмет из магазина, false если нет</th>
+                </tr>
+                <tr>
+                    <th>Player:isInCombat</th>
+                    <th>Возвращает true если игрок находится в активном ПВП, false если нет</th>
                 </tr>
                 <tr>
                     <th>Player:sendPoints</th>
@@ -237,7 +245,7 @@
             </table>
 
             <p class="semibold-text">Хуки (Server):</p>
-            
+
             <table>
                 <tr>
                     <th>Название:</th>
