@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Правила сервера</title>
+
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/menubutton.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🎩</text></svg>">
+
+    <style>
+        body {
+            margin-left: 25px;
+        }
+
+        .logo {
+            font-size: 35px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .semibold-text {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .bold-text {
+            font-size: 25px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .pagebox {
+            margin: auto;
+            width: 65%;
+        }
+
+        .box {
+            padding: 10px;
+            border: 2px solid #323232;
+            border-radius: 5px;
+            background-color: #191919;
+            box-shadow: 0px 0px 5px black;
+        }
+
+        table {
+            table-layout: fixed;
+            -webkit-text-stroke: 3px black;
+            white-space: pre-line;
+            paint-order: stroke fill;
+            font-size: 15px;
+            text-align: left;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table td:nth-child(1),
+        table th:nth-child(1) {
+            width: 15%;
+        }
+
+        th,
+        td {
+            padding: 5px;
+            border: 1px solid white;
+        }
+
+        th:hover,
+        td:hover {
+            background-color: rgb(75, 75, 75);
+        }
+
+        tbody>tr:nth-of-type(even) {
+            background-color: rgb(50, 50, 50);
+        }
+
+        #snow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pagebox">
+        <p class="logo">Википедия сервера</p>
+        <p>Здесь будет перечислена вся основая информация которая может быть вам полезна</p>
+
+        <p class="bold-text">E2:</p>
+
+        <div class="box">
+            <p class="semibold-text">Функции:</p>
+
+            <table>
+                <tr>
+                    <th>Название:</th>
+                    <th>Описание:</th>
+                </tr>
+                <tr>
+                    <th>e:getBadgeProgress</th>
+                    <th>Возвращает прогресс достижения игрока</th>
+                </tr>
+                <tr>
+                    <th>e:getDescription</th>
+                    <th>Возвращает описание игрока</th>
+                </tr>
+                <tr>
+                    <th>e:getPoints</th>
+                    <th>Возвращает количество поинтов игрока</th>
+                </tr>
+                <tr>
+                    <th>e:getTotalKills</th>
+                    <th>Возвращает общее число убийств игрока из таблицы лидеров</th>
+                </tr>
+                <tr>
+                    <th>e:hasBadge</th>
+                    <th>Возвращает 1 если у игрока есть указанное достижение, 0 если нет</th>
+                </tr>
+                <tr>
+                    <th>e:hasShopItem</th>
+                    <th>Возвращает 1 если у игрока есть предмет из магазина, 0 если нет</th>
+                </tr>
+                <tr>
+                    <th>e:isBUILD</th>
+                    <th>Возвращает 1 если игрок в билд-моде, 0 если нет</th>
+                </tr>
+                <tr>
+                    <th>e:isInCombat</th>
+                    <th>Возвращает 1 если игрок находится в активном ПВП, 0 если нет</th>
+                </tr>
+                <tr>
+                    <th>e:isInSafezone</th>
+                    <th>Возвращает 1 если игрок находится в сейфзоне, 0 если нет</th>
+                </tr>
+                <tr>
+                    <th>e:isPVP</th>
+                    <th>Возвращает 1 если игрок в ПВП моде, 0 если нет</th>
+                </tr>
+                <tr>
+                    <th>e:isSafezoneSafe</th>
+                    <th>Возвращает 1 если игрок находится в сейфзоне и уже в безопасности, 0 если нет</th>
+                </tr>
+                <tr>
+                    <th>e:sendPoints</th>
+                    <th>Отправляет игроку указанное количество поинтов
+                        Для возможности отправки их через чипы, вы должны включить это через конвар classicbox_pointsfunctions
+                    </th>
+                </tr>
+            </table>
+
+            <p class="semibold-text">Ивенты:</p>
+
+            <table>
+                <tr>
+                    <th>Название:</th>
+                    <th>Описание:</th>
+                </tr>
+                <tr>
+                    <th>playerSendPoints</th>
+                    <th>Вызывается каждый раз когда какой-либо игрок отправляет кому-то поинты</th>
+                </tr>
+            </table>
+        </div>
+
+        <p class="bold-text">Starfall:</p>
+
+        <div class="box">
+            <p class="semibold-text">Функции (Shared):</p>
+
+            <table>
+                <tr>
+                    <th>Название:</th>
+                    <th>Описание:</th>
+                </tr>
+                <tr>
+                    <th>e:getDescription</th>
+                    <th>Возвращает описание игрока</th>
+                </tr>
+                <tr>
+                    <th>e:isInSafezone</th>
+                    <th>Возвращает true если игрок находится в сейфзоне, false если нет</th>
+                </tr>
+                <tr>
+                    <th>e:isSafezoneSafe</th>
+                    <th>Возвращает true если игрок находится в сейфзоне и уже в безопасности, false если нет</th>
+                </tr>
+            </table>
+
+            <p class="semibold-text">Функции (Server):</p>
+
+            <table>
+                <tr>
+                    <th>Название:</th>
+                    <th>Описание:</th>
+                </tr>
+                <tr>
+                    <th>Player:getTotalKills</th>
+                    <th>Возвращает общее число убийств игрока из таблицы лидеров</th>
+                </tr>
+                <tr>
+                    <th>Player:isInCombat</th>
+                    <th>Возвращает true если игрок находится в активном ПВП, false если нет</th>
+                </tr>
+                <tr>
+                    <th>Player:hasBadge</th>
+                    <th>Возвращает true если у игрока есть указанное достижение, false если нет</th>
+                </tr>
+                <tr>
+                    <th>Player:getBadgeProgress</th>
+                    <th>Возвращает прогресс достижения игрока</th>
+                </tr>
+                <tr>
+                    <th>Player:getPoints</th>
+                    <th>Возвращает количество поинтов игрока</th>
+                </tr>
+                <tr>
+                    <th>Player:hasShopItem</th>
+                    <th>Возвращает true если у игрока есть предмет из магазина, false если нет</th>
+                </tr>
+                <tr>
+                    <th>Player:sendPoints</th>
+                    <th>Отправляет игроку указанное количество поинтов
+                        Для возможности отправки их через чипы, вы должны включить это через конвар classicbox_pointsfunctions
+                    </th>
+                </tr>
+            </table>
+
+            <p class="semibold-text">Хуки (Server):</p>
+            
+            <table>
+                <tr>
+                    <th>Название:</th>
+                    <th>Описание:</th>
+                </tr>
+                <tr>
+                    <th>PlayerSendPoints</th>
+                    <th>Вызывается каждый раз когда какой-либо игрок отправляет кому-то поинты</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <button class="button" onclick="window.location.href='index.html'">Назад в меню</button>
+    <div id="snow"></div>
+    <script src="snowflakes.js"></script>
+</body>
+
+</html>
