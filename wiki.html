@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Правила сервера</title>
+    <title>Вики сервера</title>
 
     <link rel="stylesheet" href="/css/general.css">
     <link rel="stylesheet" href="/css/menubutton.css">
@@ -36,6 +36,7 @@
 
         .pagebox {
             margin: auto;
+            min-width: fit-content;
             width: 65%;
         }
 
@@ -49,18 +50,8 @@
 
         table {
             table-layout: auto;
-            white-space: pre-line;
-            paint-order: stroke fill;
-            font-size: 15px;
-            text-align: left;
             border-collapse: collapse;
             width: 100%;
-        }
-
-        @supports (-webkit-text-stroke: 3px black) {
-            table {
-                -webkit-text-stroke: 3px black;
-            }
         }
 
         table td:nth-child(1),
@@ -70,8 +61,12 @@
 
         th,
         td {
+            font-weight: normal;
+            font-size: 15px;
+            text-align: left;
+            white-space: pre-line;
             padding: 5px;
-            border: 1px solid #ccc;
+            border: 1px solid #676767;
         }
 
         th:hover,
@@ -113,59 +108,59 @@
                     <th>Описание:</th>
                 </tr>
                 <tr>
-                    <th>e:getBadgeProgress</th>
-                    <th>Возвращает прогресс достижения игрока</th>
+                    <td>e:getBadgeProgress</td>
+                    <td>Возвращает прогресс достижения игрока</td>
                 </tr>
                 <tr>
-                    <th>e:getDescription</th>
-                    <th>Возвращает описание игрока</th>
+                    <td>e:getDescription</td>
+                    <td>Возвращает описание игрока</td>
                 </tr>
                 <tr>
-                    <th>e:getPoints</th>
-                    <th>Возвращает количество поинтов игрока</th>
+                    <td>e:getPoints</td>
+                    <td>Возвращает количество поинтов игрока</td>
                 </tr>
                 <tr>
-                    <th>e:getTimePlayed</th>
-                    <th>Возвращает наигранное игроком время в секундах</th>
+                    <td>e:getTimePlayed</td>
+                    <td>Возвращает наигранное игроком время в секундах</td>
                 </tr>
                 <tr>
-                    <th>e:getTotalKills</th>
-                    <th>Возвращает общее число убийств игрока из таблицы лидеров</th>
+                    <td>e:getTotalKills</td>
+                    <td>Возвращает общее число убийств игрока из таблицы лидеров</td>
                 </tr>
                 <tr>
-                    <th>e:hasBadge</th>
-                    <th>Возвращает 1 если у игрока есть указанное достижение, 0 если нет</th>
+                    <td>e:hasBadge</td>
+                    <td>Возвращает 1 если у игрока есть указанное достижение, 0 если нет</td>
                 </tr>
                 <tr>
-                    <th>e:hasShopItem</th>
-                    <th>Возвращает 1 если у игрока есть предмет из магазина, 0 если нет</th>
+                    <td>e:hasShopItem</td>
+                    <td>Возвращает 1 если у игрока есть предмет из магазина, 0 если нет</td>
                 </tr>
                 <tr>
-                    <th>e:isBUILD</th>
-                    <th>Возвращает 1 если игрок в билд-моде, 0 если нет</th>
+                    <td>e:isBUILD</td>
+                    <td>Возвращает 1 если игрок в билд-моде, 0 если нет</td>
                 </tr>
                 <tr>
-                    <th>e:isInCombat</th>
-                    <th>Возвращает 1 если игрок находится в активном ПВП, 0 если нет</th>
+                    <td>e:isInCombat</td>
+                    <td>Возвращает 1 если игрок находится в активном ПВП, 0 если нет</td>
                 </tr>
                 <tr>
-                    <th>e:isInSafezone</th>
-                    <th>Возвращает 1 если игрок находится в сейфзоне, 0 если нет</th>
+                    <td>e:isInSafezone</td>
+                    <td>Возвращает 1 если игрок находится в сейфзоне, 0 если нет</td>
                 </tr>
                 <tr>
-                    <th>e:isPVP</th>
-                    <th>Возвращает 1 если игрок в ПВП моде, 0 если нет</th>
+                    <td>e:isPVP</td>
+                    <td>Возвращает 1 если игрок в ПВП моде, 0 если нет</td>
                 </tr>
                 <tr>
-                    <th>e:isSafezoneSafe</th>
-                    <th>Возвращает 1 если игрок находится в сейфзоне и уже в безопасности, 0 если нет</th>
+                    <td>e:isSafezoneSafe</td>
+                    <td>Возвращает 1 если игрок находится в сейфзоне и уже в безопасности, 0 если нет</td>
                 </tr>
                 <tr>
-                    <th>e:sendPoints</th>
-                    <th>Отправляет игроку указанное количество поинтов
+                    <td>e:sendPoints</td>
+                    <td>Отправляет игроку указанное количество поинтов
                         Для возможности отправки их через чипы, вы должны включить это через конвар
                         classicbox_pointsfunctions
-                    </th>
+                    </td>
                 </tr>
             </table>
 
@@ -177,8 +172,8 @@
                     <th>Описание:</th>
                 </tr>
                 <tr>
-                    <th>playerSendPoints</th>
-                    <th>Вызывается каждый раз когда какой-либо игрок отправляет кому-то поинты</th>
+                    <td>playerSendPoints</td>
+                    <td>Вызывается каждый раз когда какой-либо игрок отправляет кому-то поинты</td>
                 </tr>
             </table>
         </div>
@@ -194,20 +189,20 @@
                     <th>Описание:</th>
                 </tr>
                 <tr>
-                    <th>Player:getDescription</th>
-                    <th>Возвращает описание игрока</th>
+                    <td>Player:getDescription</td>
+                    <td>Возвращает описание игрока</td>
                 </tr>
                 <tr>
-                    <th>Player:isInSafezone</th>
-                    <th>Возвращает true если игрок находится в сейфзоне, false если нет</th>
+                    <td>Player:isInSafezone</td>
+                    <td>Возвращает true если игрок находится в сейфзоне, false если нет</td>
                 </tr>
                 <tr>
-                    <th>Player:isSafezoneSafe</th>
-                    <th>Возвращает true если игрок находится в сейфзоне и уже в безопасности, false если нет</th>
+                    <td>Player:isSafezoneSafe</td>
+                    <td>Возвращает true если игрок находится в сейфзоне и уже в безопасности, false если нет</td>
                 </tr>
                 <tr>
-                    <th>Player:getTimePlayed</th>
-                    <th>Возвращает наигранное игроком время в секундах</th>
+                    <td>Player:getTimePlayed</td>
+                    <td>Возвращает наигранное игроком время в секундах</td>
                 </tr>
             </table>
 
@@ -219,35 +214,35 @@
                     <th>Описание:</th>
                 </tr>
                 <tr>
-                    <th>Player:getBadgeProgress</th>
-                    <th>Возвращает прогресс достижения игрока</th>
+                    <td>Player:getBadgeProgress</td>
+                    <td>Возвращает прогресс достижения игрока</td>
                 </tr>
                 <tr>
-                    <th>Player:getPoints</th>
-                    <th>Возвращает количество поинтов игрока</th>
+                    <td>Player:getPoints</td>
+                    <td>Возвращает количество поинтов игрока</td>
                 </tr>
                 <tr>
-                    <th>Player:getTotalKills</th>
-                    <th>Возвращает общее число убийств игрока из таблицы лидеров</th>
+                    <td>Player:getTotalKills</td>
+                    <td>Возвращает общее число убийств игрока из таблицы лидеров</td>
                 </tr>
                 <tr>
-                    <th>Player:hasBadge</th>
-                    <th>Возвращает true если у игрока есть указанное достижение, false если нет</th>
+                    <td>Player:hasBadge</td>
+                    <td>Возвращает true если у игрока есть указанное достижение, false если нет</td>
                 </tr>
                 <tr>
-                    <th>Player:hasShopItem</th>
-                    <th>Возвращает true если у игрока есть предмет из магазина, false если нет</th>
+                    <td>Player:hasShopItem</td>
+                    <td>Возвращает true если у игрока есть предмет из магазина, false если нет</td>
                 </tr>
                 <tr>
-                    <th>Player:isInCombat</th>
-                    <th>Возвращает true если игрок находится в активном ПВП, false если нет</th>
+                    <td>Player:isInCombat</td>
+                    <td>Возвращает true если игрок находится в активном ПВП, false если нет</td>
                 </tr>
                 <tr>
-                    <th>Player:sendPoints</th>
-                    <th>Отправляет игроку указанное количество поинтов
+                    <td>Player:sendPoints</td>
+                    <td>Отправляет игроку указанное количество поинтов
                         Для возможности отправки их через чипы, вы должны включить это через конвар
                         classicbox_pointsfunctions
-                    </th>
+                    </td>
                 </tr>
             </table>
 
@@ -259,8 +254,8 @@
                     <th>Описание:</th>
                 </tr>
                 <tr>
-                    <th>PlayerSendPoints</th>
-                    <th>Вызывается каждый раз когда какой-либо игрок отправляет кому-то поинты</th>
+                    <td>PlayerSendPoints</td>
+                    <td>Вызывается каждый раз когда какой-либо игрок отправляет кому-то поинты</td>
                 </tr>
             </table>
         </div>
