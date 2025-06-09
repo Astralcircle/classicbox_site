@@ -168,6 +168,10 @@
                     <td>Возвращает 1 если у игрока есть указанное достижение, 0 если нет</td>
                 </tr>
                 <tr>
+                    <td>e:hasE2Power</td>
+                    <td>Возвращает 1 если у игрока есть доступ к E2P, 0 если нет</td>
+                </tr>
+                <tr>
                     <td>e:hasShopItem</td>
                     <td>Возвращает 1 если у игрока есть предмет из магазина, 0 если нет</td>
                 </tr>
@@ -230,8 +234,16 @@
                     <th>Описание:</th>
                 </tr>
                 <tr>
+                    <td>Player:hasE2Power</td>
+                    <td>Возвращает true если у игрока есть доступ к E2P, false если нет</td>
+                </tr>
+                <tr>
                     <td>Player:getDescription</td>
                     <td>Возвращает описание игрока</td>
+                </tr>
+                <tr>
+                    <td>Player:getTimePlayed</td>
+                    <td>Возвращает наигранное игроком время в секундах</td>
                 </tr>
                 <tr>
                     <td>Player:isInSafezone</td>
@@ -240,10 +252,6 @@
                 <tr>
                     <td>Player:isSafezoneSafe</td>
                     <td>Возвращает true если игрок находится в сейфзоне и уже в безопасности, false если нет</td>
-                </tr>
-                <tr>
-                    <td>Player:getTimePlayed</td>
-                    <td>Возвращает наигранное игроком время в секундах</td>
                 </tr>
             </table>
 
