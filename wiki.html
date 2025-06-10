@@ -192,6 +192,18 @@
                     <td>Возвращает 1 если игрок в ПВП моде, 0 если нет</td>
                 </tr>
                 <tr>
+                    <td>e:isGagged</td>
+                    <td>Возвращает 1 если игрок загаган сервером, 0 если нет</td>
+                </tr>
+                <tr>
+                    <td>e:isServerMuted</td>
+                    <td>Возвращает 1 если игрок замучен сервером, 0 если нет</td>
+                </tr>
+                <tr>
+                    <td>e:isJailed</td>
+                    <td>Возвращает 1 если игрок находится в джайле, 0 если нет</td>
+                </tr>
+                <tr>
                     <td>e:isSafezoneSafe</td>
                     <td>Возвращает 1 если игрок находится в сейфзоне и уже в безопасности, 0 если нет</td>
                 </tr>
@@ -253,6 +265,14 @@
                     <td>Player:isSafezoneSafe</td>
                     <td>Возвращает true если игрок находится в сейфзоне и уже в безопасности, false если нет</td>
                 </tr>
+                <tr>
+                    <td>Player:isGagged</td>
+                    <td>Возвращает true если игрок загаган сервером, false если нет</td>
+                </tr>
+                <tr>
+                    <td>Player:isServerMuted</td>
+                    <td>Возвращает true если игрок замучен сервером, false если нет</td>
+                </tr>
             </table>
 
             <p class="semibold-text">Функции (Server):</p>
@@ -289,6 +309,10 @@
                 <tr>
                     <td>Player:isInCombat</td>
                     <td>Возвращает true если игрок находится в активном ПВП, false если нет</td>
+                </tr>
+                <tr>
+                    <td>Player:isJailed</td>
+                    <td>Возвращает true если игрок находится в джайле, false если нет</td>
                 </tr>
                 <tr>
                     <td>Player:sendPoints</td>
