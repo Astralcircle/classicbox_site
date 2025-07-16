@@ -1,29 +1,29 @@
 .button {
-    background-color: #191919;
-    border: 2px solid #323232;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px black;
-    text-shadow: 1px 1px 1px black;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    font-size: 16px;
-    transition: 0.25s;
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
-    font-family: "Rubik", sans-serif;
-    cursor: pointer;
+	background-color: #191919;
+	border: 2px solid #323232;
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px black;
+	text-shadow: 1px 1px 1px black;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	font-size: 16px;
+	transition: 0.25s;
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	font-family: "Rubik", sans-serif;
+	cursor: pointer;
 }
 
 .button:hover {
-    background-color: #424242;
-    border: 2px solid #585858;
-    transform: scale(1.025);
+	background-color: #424242;
+	border: 2px solid #585858;
+	transform: scale(1.025);
 }
 
 .button:active {
-    background-color: #424242;
-    border: 2px solid #585858;
-    transform: scale(0.95);
+	background-color: #424242;
+	border: 2px solid #585858;
+	transform: scale(0.95);
 }

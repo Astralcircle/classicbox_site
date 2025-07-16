@@ -1,103 +1,103 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ClassicBox</title>
-        
-        <link rel="stylesheet" href="/css/general.css">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🎩</text></svg>">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>ClassicBox</title>
 
-        <style>
-            body {
-                margin: 0;
-                height: 100vh;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-            }
+		<link rel="stylesheet" href="/css/general.css">
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🎩</text></svg>">
 
-            .pagebox {
-                margin: auto;
-                min-width: fit-content;
-                width: 20%;
-            }
+		<style>
+			body {
+				margin: 0;
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+			}
 
-            .box {
-                padding: 10px;
-                border: 2px solid #323232;
-                border-radius: 5px;
-                background-color: #191919;
-                box-shadow: 0px 0px 5px black;
-            }
-        
-            .biglogo {
-                font-size: 35px;
-                font-weight: bold;
-                text-align: center;
-                margin: 5px 0;
-            }
-        
-            .logo {
-                font-size: 25px;
-                font-weight: bold;
-                text-align: center;
-                margin: 0;
-            }
+			.pagebox {
+				margin: auto;
+				min-width: fit-content;
+				width: 20%;
+			}
 
-            .secret {
-                font-size: 10px;
-                font-weight: bold;
-                text-align: center;
-                color: transparent;
-                text-shadow: none;
-                position: fixed;
-                left: 10px;
-                bottom: 10px;
-                margin: 0;
-            }
-        
-            a {
-                transition: 0.25s;
-                display: block;
-            }
-        
-            a:hover {
-                transform: scale(1.15);
-            }
-        
-            a:active {
-                transform: scale(0.95);
-            }
-        
-            #snow {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                right: 0;
-                bottom: 0;
-                pointer-events: none;
-                z-index: -1;
-            }
-        </style>
-    </head>
-    
-    <body>
-        <div class="pagebox">
-            <div class="box">
-                <p class="biglogo">ClassicBox</p>
-                <p class="logo"><a href="rules.html">Правила</a></p>
-                <p class="logo"><a href="wiki.html">Вики сервера</a></p>
-                <p class="logo"><a href="https://discord.gg/HAYqdWFrGE">Дискорд</a></p>
-                <p class="logo"><a href="loadscreen/loadscreen.html">Лоадскрин</a></p>
-            </div>
-            <p class="secret">-.- .--. --. ...- / -.-- .-. -.- .---- ...-- / -.--. .-. --- - .---- --... -.--.-</p>
-        </div>
+			.box {
+				padding: 10px;
+				border: 2px solid #323232;
+				border-radius: 5px;
+				background-color: #191919;
+				box-shadow: 0px 0px 5px black;
+			}
 
-        <div id="snow"></div>
-        <script src="snowflakes.js"></script>
-    </body>
+			.biglogo {
+				font-size: 35px;
+				font-weight: bold;
+				text-align: center;
+				margin: 5px 0;
+			}
+
+			.logo {
+				font-size: 25px;
+				font-weight: bold;
+				text-align: center;
+				margin: 0;
+			}
+
+			.secret {
+				font-size: 10px;
+				font-weight: bold;
+				text-align: center;
+				color: transparent;
+				text-shadow: none;
+				position: fixed;
+				left: 10px;
+				bottom: 10px;
+				margin: 0;
+			}
+
+			a {
+				transition: 0.25s;
+				display: block;
+			}
+
+			a:hover {
+				transform: scale(1.15);
+			}
+
+			a:active {
+				transform: scale(0.95);
+			}
+
+			#snow {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				right: 0;
+				bottom: 0;
+				pointer-events: none;
+				z-index: -1;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="pagebox">
+			<div class="box">
+				<p class="biglogo">ClassicBox</p>
+				<p class="logo"><a href="rules.html">Правила</a></p>
+				<p class="logo"><a href="wiki.html">Вики сервера</a></p>
+				<p class="logo"><a href="https://discord.gg/HAYqdWFrGE">Дискорд</a></p>
+				<p class="logo"><a href="loadscreen/loadscreen.html">Лоадскрин</a></p>
+			</div>
+			<p class="secret">-.- .--. --. ...- / -.-- .-. -.- .---- ...-- / -.--. .-. --- - .---- --... -.--.-</p>
+		</div>
+
+		<div id="snow"></div>
+		<script src="snowflakes.js"></script>
+	</body>
 </html>
