@@ -48,7 +48,7 @@
 				width: 100%;
 				height: 100%;
 				pointer-events: none;
-				background: radial-gradient(circle, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%);
+				background: radial-gradient(circle, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%);
 			}
 
 			#text-container {
@@ -88,7 +88,7 @@
 			<div id="vignette-overlay"></div>
 			<div id="text-container">
 				<div id="title">ClassicBox</div>
-				<div id="subtitle">Установи уже хромиум...</div>
+				<div id="subtitle"></div>
 			</div>
 			<div id="snow"></div>
 			<script src="../snowflakes.js"></script>
@@ -131,14 +131,11 @@
 			}
 
 			window.onload = () => {
-				// Load the first image
 				const initialIndex = Math.floor(Math.random() * images.length);
 				currentImageElement.src = images[initialIndex];
 
-				// Choose a random subtitle and set it
 				chooseRandomSubtitle();
 
-				// When the first image loads, set the subtitle and make it visible
 				currentImageElement.onload = () => {
 					document.getElementById('subtitle').style.opacity = 1;
 				};
