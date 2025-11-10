@@ -50,8 +50,6 @@
 			</span></p>
 			<p class="punish">Наказание: бан до 7 дней, при повторе — перманентный бан.</p>
 		</div>
-
-		<p class="rule"><span class="rule-text">Возвращайтесь к <a href="rules.html">основным правилам</a> для полного списка.</span></p>
 	</div>
 
 	<button class="button" onclick="window.location.href='rules.html'">Назад к правилам</button>
