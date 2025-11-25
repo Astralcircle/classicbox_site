@@ -16,6 +16,10 @@ h3 {
 	text-align: left;
 }
 
+p {
+	font-size: 15px;
+}
+
 li {
 	margin: 10px 0;
 }
@@ -24,7 +28,6 @@ li {
 	display: flex;
 	align-items: flex-start;
 	margin-top: 0.5em;
-	font-size: 15px;
 	font-weight: normal;
 	text-align: left;
 }
@@ -39,7 +42,6 @@ li {
 }
 
 .punish {
-	font-size: 15px;
 	margin-left: 1.75em;
 	margin-bottom: 1.5em;
 	font-weight: normal;
