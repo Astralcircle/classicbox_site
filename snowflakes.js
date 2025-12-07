@@ -57,7 +57,7 @@ if (month == 11) {
 						"onclick": {
 							"enable": false
 						},
-						"resize": false
+						"resize": true
 					}
 				},
 				"retina_detect": true
