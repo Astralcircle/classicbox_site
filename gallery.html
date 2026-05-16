@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Галерея скриншотов</title>
+
+		<link rel="stylesheet" href="/css/general.css">
+		<link rel="stylesheet" href="/css/menubutton.css">
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🎩</text></svg>">
+
+		<style>
+			.pagebox {
+				width: 90%;
+				max-width: 1400px;
+				margin: 0 auto;
+				padding-bottom: 80px;
+			}
+
+			h1 {
+				font-size: 35px;
+				font-weight: bold;
+				text-align: center;
+				margin-bottom: 40px;
+			}
+
+			.gallery-grid {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				grid-auto-rows: 180px;
+				gap: 20px;
+				margin-top: 15px;
+				grid-auto-flow: dense;
+			}
+
+			.gallery-card {
+				background-color: #191919;
+				border: 2px solid #323232;
+				border-radius: 5px;
+				box-shadow: 0px 0px 5px black;
+				overflow: hidden;
+				transition: all 0.2s ease-in-out;
+				cursor: pointer;
+				display: block;
+			}
+
+			.gallery-card:hover {
+				transform: scale(1.02);
+				border-color: #5a5a5a;
+				box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.7);
+			}
+
+			.gallery-card img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				display: block;
+				background-color: #0a0a0a;
+			}
+
+			.gallery-card--large {
+				grid-column: span 2;
+				grid-row: span 2;
+			}
+
+			.lightbox {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(10, 10, 10, 0.96);
+				backdrop-filter: blur(8px);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				z-index: 2000;
+				visibility: hidden;
+				opacity: 0;
+				transition: opacity 0.2s ease, visibility 0.2s;
+				cursor: pointer;
+			}
+
+			.lightbox.active {
+				visibility: visible;
+				opacity: 1;
+			}
+
+			.lightbox-img {
+				max-width: 90vw;
+				max-height: 85vh;
+				object-fit: contain;
+				border-radius: 8px;
+				border: 3px solid #3a3a3a;
+				box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+				background: #000;
+			}
+
+			#snow {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				right: 0;
+				bottom: 0;
+				pointer-events: none;
+				z-index: -1;
+			}
+
+			@media (max-width: 1000px) {
+				.gallery-grid {
+					grid-template-columns: repeat(3, 1fr);
+					grid-auto-rows: 160px;
+					gap: 16px;
+				}
+			}
+
+			@media (max-width: 650px) {
+				.gallery-grid {
+					grid-template-columns: repeat(2, 1fr);
+					grid-auto-rows: 150px;
+					gap: 12px;
+				}
+
+				.gallery-card--large {
+					grid-column: span 1;
+					grid-row: span 1;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="pagebox">
+			<h1>Галерея скриншотов</h1>
+			<div id="gallery-container" class="gallery-grid"></div>
+		</div>
+
+		<div id="lightbox" class="lightbox">
+			<img class="lightbox-img" id="lightbox-img" alt="">
+		</div>
+
+		<script src="loadscreen/config.js"></script>
+
+		<script>
+			(function () {
+				const gallerydiv = document.getElementById('gallery-container');
+				const lightbox = document.getElementById('lightbox');
+				const lightboximg = document.getElementById('lightbox-img');
+
+				const images = [];
+				for (let i = MAX_SCREENSHOTS; i >= 1; i--) {
+					images.push(`loadscreen/screenshots/image${i}.jpg`);
+				}
+
+				function renderGallery() {
+					if (!gallerydiv) return;
+					let cardshtml = '';
+					images.forEach((imgPath, idx) => {
+						const largeClass = (idx % 4 === 0) ? ' gallery-card--large' : '';
+						cardshtml += `<div class="gallery-card${largeClass}" data-fullimg="${imgPath}"><img src="${imgPath}" alt="" loading="lazy"></div>`;
+					});
+
+					gallerydiv.innerHTML = cardshtml;
+
+					document.querySelectorAll('.gallery-card').forEach(card => {
+						card.addEventListener('click', () => {
+							const fullUrl = card.getAttribute('data-fullimg');
+							if (fullUrl) openLightbox(fullUrl);
+						});
+					});
+				}
+
+				function openLightbox(url) {
+					if (!lightbox || !lightboximg) return;
+					lightboximg.src = url;
+					lightbox.classList.add('active');
+					document.body.style.overflow = 'hidden';
+				}
+
+				function closeLightboxHandler() {
+					if (!lightbox) return;
+					lightbox.classList.remove('active');
+					document.body.style.overflow = '';
+					setTimeout(() => {
+						if (lightboximg && !lightbox.classList.contains('active')) {
+							lightboximg.src = '';
+						}
+					}, 200);
+				}
+
+				renderGallery();
+
+				if (lightbox) {
+					lightbox.addEventListener('click', (e) => {
+						if (e.target === lightbox || e.target === lightboximg) {
+							closeLightboxHandler();
+						}
+					});
+					document.addEventListener('keydown', (e) => {
+						if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+							closeLightboxHandler();
+						}
+					});
+				}
+			})();
+		</script>
+
+		<button class="button" onclick="window.location.href='index.html'">Назад в меню</button>
+		<div id="snow"></div>
+		<script src="snowflakes.js"></script>
+	</body>
+</html>
