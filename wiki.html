@@ -221,7 +221,7 @@
 					<td>Возвращает общее число убийств игрока из таблицы лидеров</td>
 				</tr>
 				<tr>
-					<td>e:hasBadge</td>
+					<td>e:hasBadge(string id)</td>
 					<td>Возвращает 1 если у игрока есть указанное достижение, 0 если нет</td>
 				</tr>
 				<tr>
@@ -229,7 +229,7 @@
 					<td>Возвращает 1 если у игрока есть доступ к E2P, 0 если нет</td>
 				</tr>
 				<tr>
-					<td>e:hasShopItem</td>
+					<td>e:hasShopItem(string id)</td>
 					<td>Возвращает 1 если у игрока есть предмет из магазина, 0 если нет</td>
 				</tr>
 				<tr>
@@ -269,11 +269,11 @@
 					<td>Возвращает 1 если игрок замучен сервером, 0 если нет</td>
 				</tr>
 				<tr>
-					<td>e:requestPoints</td>
+					<td>e:requestPoints(number amount)</td>
 					<td>Запрашивает у игрока указанное количество поинтов</td>
 				</tr>
 				<tr>
-					<td>e:sendPoints</td>
+					<td>e:sendPoints(number amount)</td>
 					<td>Отправляет игроку указанное количество поинтов
 						Для возможности отправки их через чипы, вы должны включить это через конвар
 						classicbox_pointsfunctions
@@ -289,7 +289,7 @@
 					<th>Описание:</th>
 				</tr>
 				<tr>
-					<td>playerSendPoints</td>
+					<td>playerSendPoints(entity sender, entity receiver, number amount)</td>
 					<td>Вызывается каждый раз когда какой-либо игрок отправляет кому-то поинты</td>
 				</tr>
 			</table>
@@ -375,11 +375,11 @@
 					<td>Возвращает общее число убийств игрока из таблицы лидеров</td>
 				</tr>
 				<tr>
-					<td>Player:hasBadge</td>
+					<td>Player:hasBadge(string id)</td>
 					<td>Возвращает true если у игрока есть указанное достижение, false если нет</td>
 				</tr>
 				<tr>
-					<td>Player:hasShopItem</td>
+					<td>Player:hasShopItem(string id)</td>
 					<td>Возвращает true если у игрока есть предмет из магазина, false если нет</td>
 				</tr>
 				<tr>
@@ -391,11 +391,11 @@
 					<td>Возвращает true если игрок замучен сервером, false если нет</td>
 				</tr>
 				<tr>
-					<td>Player:requestPoints</td>
+					<td>Player:requestPoints(number amount)</td>
 					<td>Запрашивает у игрока указанное количество поинтов</td>
 				</tr>
 				<tr>
-					<td>Player:sendPoints</td>
+					<td>Player:sendPoints(number amount)</td>
 					<td>Отправляет игроку указанное количество поинтов
 						Для возможности отправки их через чипы, вы должны включить это через конвар
 						classicbox_pointsfunctions
@@ -411,7 +411,7 @@
 					<th>Описание:</th>
 				</tr>
 				<tr>
-					<td>PlayerSendPoints</td>
+					<td>PlayerSendPoints(entity sender, entity receiver, number amount)</td>
 					<td>Вызывается каждый раз когда какой-либо игрок отправляет кому-то поинты</td>
 				</tr>
 			</table>
