@@ -76,3 +76,15 @@ li {
 	pointer-events: none;
 	z-index: -1;
 }
+
+@media screen and (max-width: 1024px) {
+	.pagebox {
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.pagebox {
+		width: 90%;
+	}
+}
