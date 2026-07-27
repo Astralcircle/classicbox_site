@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://classic-box.ru/sitemap.xml
