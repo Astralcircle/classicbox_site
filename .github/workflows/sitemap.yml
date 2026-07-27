@@ -7,7 +7,8 @@ on:
 jobs:
   sitemap_job:
     runs-on: ubuntu-latest
-    name: Generate a sitemap
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout the repo
@@ -24,9 +25,9 @@ jobs:
           exclude-paths: "loadscreen/"
 
       - name: Commit and push changes
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add sitemap.xml
-          git diff --staged --quiet || git commit -m "Update sitemap"
-          git push
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update sitemap"
+          file_pattern: sitemap.xml
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
