@@ -21,6 +21,7 @@ jobs:
         uses: cicirello/generate-sitemap@v1
         with:
           base-url-path: https://classic-box.ru/
+          drop-html-extension: true
           include-paths: "**/*.html"
           exclude-paths: "loadscreen/"
 
