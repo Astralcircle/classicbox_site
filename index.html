@@ -55,6 +55,10 @@
 				text-align: center;
 				color: transparent;
 				text-shadow: none;
+				background: transparent;
+				border: none;
+				padding: 0;
+				cursor: pointer;
 				position: fixed;
 				left: 10px;
 				bottom: 10px;
@@ -111,8 +115,21 @@
 				<p class="logo"><a href="https://gm-donate.net/donate/20573">Пожертвовать</a></p>
 				<p class="logo"><a href="https://discord.gg/HAYqdWFrGE">Дискорд</a></p>
 			</div>
-			<p class="secret">-.- .--. --. ...- / -.-- .-. -.- .-.-. -.. .--- -... ..- .-. .--. / -.--. .-. --- - .---- --... -.--.-</p>
+
+			<button class="secret" id="music_button">play me</button>
 		</div>
+
+		<audio id="bg_music" src="content/backgroundmusic.wav" preload="none"></audio>
+
+		<script>
+			const music_button = document.getElementById("music_button");
+			const bg_music = document.getElementById("bg_music");
+
+			music_button.addEventListener("click", () => {
+				music_button.remove();
+				bg_music.play();
+			});
+		</script>
 
 		<div id="snow"></div>
 		<script src="snowflakes.js"></script>
