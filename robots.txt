@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://classic-box.ru/sitemap.xml
+Sitemap: https://classic-box.org/sitemap.xml
