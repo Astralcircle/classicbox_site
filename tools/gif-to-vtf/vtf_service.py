@@ -28,7 +28,7 @@ WORKERS = int(os.environ.get("VTF_WORKERS", "4"))
 SIZES = (16, 32, 64, 128, 256)
 UA = "ClassicBox-VTF-Service/1.0"
 
-_hosts = os.environ.get("VTF_ALLOWED_HOSTS", "classic-box.org,cdn.discordapp.com,cdn.betterttv.net")
+_hosts = os.environ.get("VTF_ALLOWED_HOSTS", "classic-box.org,cdn.betterttv.net")
 ALLOWED_HOSTS = [] if _hosts.strip() == "*" else [h.strip().lower() for h in _hosts.split(",") if h.strip()]
 
 slots = threading.BoundedSemaphore(WORKERS)
