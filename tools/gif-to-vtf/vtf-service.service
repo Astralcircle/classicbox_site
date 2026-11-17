@@ -1,0 +1,17 @@
+[Unit]
+After=network.target
+
+[Service]
+User=www-data
+EnvironmentFile=-/etc/vtf-service.env
+StateDirectory=vtf-service
+ExecStart=/opt/discord-emojis-venv/bin/python /var/www/classicbox_site/tools/discord-emojis/vtf_service.py
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
