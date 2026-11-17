@@ -1,0 +1,9 @@
+[Unit]
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=www-data
+EnvironmentFile=/etc/discord-emojis.env
+ExecStart=/usr/bin/python3 /var/www/classicbox_site/tools/discord-emojis/sync_emojis.py

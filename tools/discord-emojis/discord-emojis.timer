@@ -1,0 +1,4 @@
+[Timer]
+OnBootSec=0
+OnUnitActiveSec=6h
+Persistent=true
