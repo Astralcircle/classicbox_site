@@ -66,7 +66,8 @@ def main():
 		if name in result:
 			name = f"{name}_{e['id']}"
 
-		filename = f"{name}.png"
+		ext = "gif" if e.get("animated") else "png"
+		filename = f"{name}.{ext}"
 		path = os.path.join(OUT_DIR, filename)
 		id_marker = path + ".id"
 
@@ -76,7 +77,7 @@ def main():
 			and open(id_marker).read() == e["id"]
 		)
 		if not up_to_date:
-			url = f"https://cdn.discordapp.com/emojis/{e['id']}.png?size={SIZE}"
+			url = f"https://cdn.discordapp.com/emojis/{e['id']}.{ext}?size={SIZE}"
 			try:
 				atomic_write(path, http_get(url))
 				atomic_write(id_marker, e["id"].encode())
