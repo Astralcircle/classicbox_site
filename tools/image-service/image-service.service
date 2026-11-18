@@ -1,0 +1,17 @@
+[Unit]
+After=network.target
+
+[Service]
+User=www-data
+EnvironmentFile=-/etc/image-service.env
+StateDirectory=image-storage
+ExecStart=/usr/bin/python3 /var/www/classicbox_site/tools/image-storage/image_service.py
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
