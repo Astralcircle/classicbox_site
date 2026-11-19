@@ -3,6 +3,7 @@ import hmac
 import json
 import os
 import secrets
+import string
 import tempfile
 import threading
 import time
@@ -11,6 +12,8 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 HOST = os.environ.get("IMG_HOST", "127.0.0.1")
 PORT = int(os.environ.get("IMG_PORT", "8766"))
 PUBLIC_URL = os.environ.get("IMG_PUBLIC_URL", "https://classic-box.org/img").rstrip("/")
+ID_LENGTH = 8
+ALPHABET = string.ascii_letters + string.digits
 STATE_DIR = os.environ.get("STATE_DIRECTORY", "/var/lib/image-storage")
 FILES_DIR = os.path.join(STATE_DIR, "files")
 TMP_DIR = os.path.join(STATE_DIR, "tmp")
@@ -103,8 +106,14 @@ def enforce_limits():
 			remove(path)
 			total -= size
 
+def new_name(ext):
+	while True:
+		name = "".join(secrets.choice(ALPHABET) for _ in range(ID_LENGTH)) + "." + ext
+		if not os.path.exists(os.path.join(FILES_DIR, name)):
+			return name
+
 def store(data, ext):
-	name = f"{secrets.token_hex(16)}.{ext}"
+	name = new_name(ext)
 	fd, tmp = tempfile.mkstemp(dir=TMP_DIR)
 	with os.fdopen(fd, "wb") as f:
 		f.write(data)
