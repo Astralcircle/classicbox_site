@@ -11,7 +11,7 @@ TOKEN = os.environ["DISCORD_BOT_TOKEN"]
 GUILD_ID = os.environ["DISCORD_GUILD_ID"]
 OUT_DIR = os.environ.get("EMOJI_DIR", "/var/www/emojis")
 BASE_URL = os.environ.get("EMOJI_BASE_URL", "https://classic-box.org/emojis").rstrip("/")
-SIZE = int(os.environ.get("EMOJI_SIZE", "128"))
+SIZE = int(os.environ.get("EMOJI_SIZE", "64"))
 
 API = "https://discord.com/api/v10"
 UA = "DiscordRelay-EmojiSync (https://classic-box.org, 1.0)"
